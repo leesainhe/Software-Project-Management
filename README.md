@@ -1,1 +1,1 @@
-This project contains "seat reservation" module of online ticket booking system.
+This project contains "seat reservation" module of online movie ticket booking system.
