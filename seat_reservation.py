@@ -94,3 +94,17 @@ class CLI:
 
         	seat_id = int(input("Enter seat id: "))
         	self.show_reservations(self.controller.create_cinema(seat_id))
+		
+def main():
+    db = sqlite3.connect("cinema_data.db")
+    db.row_factory = sqlite3.Row
+    cursor = db.cursor()
+
+    db_communicator = DBCommunicator(cursor)
+    controller = Controller(db_communicator)
+    cli = CLI(controller)
+    cli.start()
+
+
+if __name__ == '__main__':
+    main()
